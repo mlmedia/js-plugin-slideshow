@@ -60,16 +60,16 @@ hr {
 }
 
 /* mobile */
-@media max-width979px{
+@media (max-width:979px) {
     .container {
         width:100%;
     }
 }
 
-@media max-width790px{
+@media (max-width:790px) {
 
 }
 
-@media max-width500px{
+@media (max-width:500px){
 
 }
