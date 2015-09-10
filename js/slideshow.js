@@ -8,24 +8,27 @@
 		/* set vars */
 		var slideshow = this;
 		var slides = slideshow.find('.slide');
-		var active_slides = slides.find('.slide.active');
-		var active_slide = active_slides.first().length > 0 ? active_slides.first() : slides.find('.tab_control:eq(0)');
 		var controls = slideshow.find('.control');
+		var active_slides = slideshow.find('.slide.active');
+		var active_slide = active_slides.first().length > 0 ? active_slides.first() : slideshow.find('.slide:eq(0)');
 		var target_index = active_slide.index();
-		var target_el = slides.find('.slide:eq(' + target_index + ')');
-		var slide_speed = 6000;
+		var target_el = slideshow.find('.slide:eq(' + target_index + ')');
+		var target_control = slideshow.find('.control:eq(' + target_index + ')');
+		var slide_speed = 10000;
 		var timer;
 
 		/* hide the slides before showing the active slide */
 		slideshow.hide();
 		$(window).load(function() {
-			/* grab the active tab and hide all other tabs */
-			slides.removeClass('active');
-			active_slide.addClass('active');
-			slides.hide();
-			target_el.show();
+			/* hide all slides, then show the active one */
+			slides.removeClass('active').hide();
+			target_el.addClass('active').show();
 
-			/* show the tabs when everything is loaded */
+			/* remove active class from all controls and then add it to the target (active) control */
+			controls.removeClass('active');
+			target_control.addClass('active');
+			
+			/* show the slideshow when everything is set */
 			slideshow.show();
 
 			/* animate the slideshow every XX seconds */
