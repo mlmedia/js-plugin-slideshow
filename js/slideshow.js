@@ -27,7 +27,7 @@
 			/* remove active class from all controls and then add it to the target (active) control */
 			controls.removeClass('active');
 			target_control.addClass('active');
-			
+
 			/* show the slideshow when everything is set */
 			slideshow.show();
 
