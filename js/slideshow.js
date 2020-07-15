@@ -2,9 +2,9 @@
  * home JS - separated because homepages usually use a lot of stuff the rest of the site doesn't need
  */
 /* define $ as jQuery just in case */
-(function($) {
+(function ($) {
 	/* slideshow - my custom plugin */
-	$.fn.slideshow = function() {
+	$.fn.slideshow = function () {
 		/* set vars */
 		var slideshow = this;
 		var slides = slideshow.find('.slide');
@@ -19,7 +19,7 @@
 
 		/* hide the slides before showing the active slide */
 		slideshow.hide();
-		$(window).load(function() {
+		$(window).load(function () {
 			/* hide all slides, then show the active one */
 			slides.removeClass('active').hide();
 			target_el.addClass('active').show();
@@ -36,7 +36,7 @@
 		});
 
 		/* navigator */
-		slideshow.on('click', '.control', function(e) {
+		slideshow.on('click', '.control', function (e) {
 			/* reset the timer */
 			window.clearInterval(timer);
 
